@@ -1,4 +1,2 @@
-mpg123 -w "${1%.*}.wav" "$1"
-opusenc --vbr --bitrate 25 "${1%.*}.wav" "${1%.*}.opus"
-rm "${1%.*}.wav"
-rm "$1"
+ffmpeg -i "$1" -f wav - | opusenc --bitrate 50 --vbr - "${1%.*}.opus"
+#rm "$1"
