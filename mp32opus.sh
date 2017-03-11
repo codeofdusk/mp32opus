@@ -1,2 +1,2 @@
-ffmpeg -i "$1" -f wav - | opusenc --bitrate 50 --vbr - "${1%.*}.opus"
-#rm "$1"
+avconv -i "$1" -map 0:a -codec:a opus -b:a 50k -vbr on "${1%.*}.opus"
+rm "$1"
