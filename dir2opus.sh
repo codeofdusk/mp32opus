@@ -3,4 +3,4 @@
 #This script requires mp32opus.sh and Gnu Parallel.
 scriptdir=$(dirname "$0")
 cd "$1"
-ls -1 | grep -i .opus | parallel --jobs $2 "$scriptdir/mp32opus.sh"
+ls -1 | parallel --jobs $2 "$scriptdir/mp32opus.sh"
